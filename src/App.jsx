@@ -3,11 +3,28 @@ import './App.css'
 
 function App() {
 
+  const handleAddUser = e =>{
+    e.preventDefault()
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const user = {name,email}
+    console.log(user)
+  }
+
 
   return (
     <>
 
       <h1>Simple CRUD system client</h1>
+      <h1>Create an User</h1>
+      <form onSubmit={handleAddUser}>
+        <input type="text" name="name" id="" placeholder='Name' />
+        <br />
+        <input type="email" name="email" id="" placeholder='Email' />
+        <br />
+        <input type="submit" value="Add User" />
+      </form>
 
     </>
   )
